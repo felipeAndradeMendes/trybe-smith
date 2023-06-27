@@ -1,6 +1,7 @@
 import { DataTypes, Model, ModelDefined, Optional } from 'sequelize';
 import db from './index';
 import { Order } from '../../types/Order';
+// import UserModel, { UserSequelizeModel } from './user.model';
 
 type OrderInputtableTypes = Optional<Order, 'id'>;
 type OrderSequelizeModelCreator = ModelDefined<Order, OrderInputtableTypes>;
@@ -21,5 +22,11 @@ const OrderModel: OrderSequelizeModelCreator = db.define('Order', {
   timestamps: false,
   underscored: true,
 });
+
+// OrderModel.belongsTo<Model<Order, OrderInputtableTypes>, 
+// UserSequelizeModel>(UserModel, {
+//   foreignKey: 'userId',
+//   as: 'user', 
+// });
 
 export default OrderModel;

@@ -18,4 +18,6 @@ describe('ProductsService - Unidade', function () {
     expect(serviceResponse.status).to.equal('ok');
     expect(serviceResponse.data).to.deep.equal(productMock.productCreated);
   });
+
+  // FAZER TESTES DE UNIDADE DA ROTA GET PODUCTS - REQ 02
 });
