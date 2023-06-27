@@ -12,6 +12,18 @@ async function create(req: Request, res: Response) {
   }
 }
 
+async function listAll(req: Request, res: Response) {
+  try {
+    const lisProducts = await productService.listAll();
+
+    return res.status(200).json(lisProducts.data);
+  } catch (error) {
+    console.log(error);
+    // return res.status(500).json(error.mesage);
+  }
+}
+
 export default {
   create,
+  listAll,
 };
