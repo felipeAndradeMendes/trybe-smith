@@ -7,7 +7,7 @@ async function create(req: Request, res: Response) {
 
     return res.status(201).json(createProduct.data);
   } catch (error) {
-    console.log(error);
+    // console.log(error: unknown);
     // return res.status(500).json(error.message);
   }
 }
