@@ -1,4 +1,4 @@
-import OrderModel, { OrderSequelizeModel } from '../database/models/order.model';
+import OrderModel from '../database/models/order.model';
 import ProductModel from '../database/models/product.model';
 import { NewOrder } from '../types/Order';
 import { ServiceResponseSuccess } from '../types/ServiceResponse';
