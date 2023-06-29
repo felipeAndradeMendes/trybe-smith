@@ -6,14 +6,12 @@ const productSchema = Joi.object({
   orderId: Joi.number(),
 });
 
-// const errorCodes = {
-//   400: '"name" is required',
-// };
-
-// const chooseError = (msg) => {
-
-// };
+const orderSchema = Joi.object({
+  productIds: Joi.array().items(Joi.number()).required(),
+  userId: Joi.number().required(),
+});
 
 export default {
   productSchema,
+  orderSchema,
 };
