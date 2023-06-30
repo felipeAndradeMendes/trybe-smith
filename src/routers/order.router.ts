@@ -6,10 +6,10 @@ import validateOrderInput from '../middlewares/orderInputValidation';
 const orderRouter = Router();
 
 orderRouter.get('/', orderController.listAll);
-orderRouter.put(
+orderRouter.post(
   '/', 
-  validateJWT.validateJWT, 
-  validateOrderInput.validatedOrderInput,
+  validateJWT, 
+  validateOrderInput,
   orderController.create,
 );
 

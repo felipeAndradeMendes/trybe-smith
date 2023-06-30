@@ -7,7 +7,7 @@ const productSchema = Joi.object({
 });
 
 const orderSchema = Joi.object({
-  productIds: Joi.array().items(Joi.number()).required(),
+  productIds: Joi.array().items(Joi.number().integer()).required(),
   userId: Joi.number().required(),
 });
 

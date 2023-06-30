@@ -8,7 +8,7 @@ const sign = (payload: JwtPayload): string => {
   return token;
 };
 
-const validateToken = (token: string): unknown => jwt.verify(token, secretJwt);
+const validateToken = (token: string): JwtPayload => jwt.verify(token, secretJwt) as JwtPayload;
 
 export default {
   sign,
