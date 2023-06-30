@@ -73,6 +73,10 @@ const productUpdateParameters = {
   orderId,
 }
 
+const productServiceSuccessResponse = {
+  status: 'ok',
+  data: 'Product updated',
+}
 // const buildedMock = productListReturned.forEach(product => {
 //   ProductModel.build(product);
 // });

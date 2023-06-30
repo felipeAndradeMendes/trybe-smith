@@ -19,10 +19,7 @@ describe('ProductsService - Unidade', function () {
     expect(serviceResponse.data).to.deep.equal(productMock.productCreated);
   });
 
-  // it('Ao atualizar um produto, retorna status correto', async function () {
-  //   const { productIdArray, orderId } = productMock.productUpdateParameters;
-  //   const mockUpdateReturn = ProductModel.build(productIdArray, orde)
-  // });
-
+  /* Está com quase 90% dos testes passando
+  Retormar fazendo testes unitários dos services de products e users para finalziar */
 
 });

@@ -70,9 +70,48 @@ const orderCreateReturn = {
   userId: 1
 }
 
+const orderServiceSuccessReturn = {
+  status: 'ok',
+  data: {
+    "id": 1,
+    "userId": 1,
+  }
+}
+
+const createOrderHttpResponse = {
+  "userId": 1,
+  "productIds": [
+    1,
+    2
+  ]
+}
+
+const productId = 1;
+const productIdArray = [1, 2];
+const userId = 1;
+const orderCreateParameters = {
+  productIds: [{id: 1}, {id: 2}],
+  userId,
+}
+
+const orderModelReturn = {
+id: 1,
+userId: 1
+}
+
+const productServiceSuccessResponse = {
+  status: 'ok',
+  data: 'Product updated',
+}
+
 export default {
   returnedOrders,
   formatedReturnedOrders,
   orderRequestBody,
   orderCreateReturn,
+  orderServiceSuccessReturn,
+  createOrderHttpResponse,
+  orderCreateParameters,
+  orderModelReturn,
+  productServiceSuccessResponse,
 };

@@ -45,7 +45,19 @@ describe('OrdersController', function () {
 
     expect(res.status).to.have.been.calledWith(500);
     expect(res.json).to.have.been.calledWith({ message: 'Algo de errado ocorreu' });
+  });
 
+  it('É possivel criar um novo pedido com sucesso', async function () {
+    req.body = orderMock.orderRequestBody;
+    const mockFindOneReturn = UserModel.build(userMock.userModelSuccessResponse)
+    sinon.stub(userService, 'findOne').resolves(mockFindOneReturn);
+    const orderServiceResponse = orderMock.orderServiceSuccessReturn;
+    sinon.stub(orderService, 'create').resolves(orderServiceResponse);
+
+    await orderController.create(req, res);
+
+    expect(res.status).to.have.been.calledWith(201);
+    expect(res.json).to.have.been.calledWith(orderMock.createOrderHttpResponse);
   });
 
 });

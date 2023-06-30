@@ -40,6 +40,7 @@ CreateOrderParameter): Promise<ServiceResponseSuccess<Order> | undefined> {
 
   await productService.updateProducts(productIds, addOrder.dataValues.id);
   // console.log('UPDATE PRODUCTS:', updateProducts);
+  // console.log('ADD ORDERS DATAVALUES', addOrder.dataValues);
   return {
     status: 'ok',
     data: addOrder.dataValues,
