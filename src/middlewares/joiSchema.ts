@@ -7,8 +7,8 @@ const productSchema = Joi.object({
 });
 
 const orderSchema = Joi.object({
-  productIds: Joi.array().items(Joi.number().integer()).required(),
-  userId: Joi.number().required(),
+  productIds: Joi.array().items(Joi.number().integer().prefs({ convert: false })).min(1).required(),
+  userId: Joi.number().prefs({ convert: false }).required(),
 });
 
 export default {
