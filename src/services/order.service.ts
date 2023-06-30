@@ -35,7 +35,7 @@ async function listAll(): Promise<ServiceResponseSuccess<NewOrder[]>> {
 async function create({ productIds, userId }: 
 CreateOrderParameter): Promise<ServiceResponseSuccess<Order> | undefined> { 
   const addOrder = await OrderModel.create({ productIds, userId });
-  // console.log('ADD Orders:', addOrder);
+  console.log('ADD Orders:', addOrder);
   // console.log('Product ids:', productIds);
 
   await productService.updateProducts(productIds, addOrder.dataValues.id);

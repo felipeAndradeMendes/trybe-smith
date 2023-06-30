@@ -60,7 +60,19 @@ const returnedOrders = [
   }
 ]
 
+const orderRequestBody = {
+  "productIds": [1,2],
+  "userId": 1
+};
+
+const orderCreateReturn = {
+  id: 6, 
+  userId: 1
+}
+
 export default {
   returnedOrders,
   formatedReturnedOrders,
+  orderRequestBody,
+  orderCreateReturn,
 };

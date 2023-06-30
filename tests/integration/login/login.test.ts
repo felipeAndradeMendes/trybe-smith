@@ -35,4 +35,15 @@ describe('POST /login - Integração', function () {
     expect(httpResponse.status).to.equal(401);
     expect(httpResponse.body).to.deep.equal({ message: 'Username or password invalid' });
   });
+
+  it('Ao receber tudo corretamente, retorna token', async function () {
+    const httpRequestBody = loginMock.validLoginBody;
+    const mockFindOnereturn = UserModel.build(loginMock.userFoundReturned);
+    sinon.stub(UserModel, 'findOne').resolves(mockFindOnereturn);
+
+    const httpResponse = await chai.request(app).post('/login').send(httpRequestBody);
+
+    expect(httpResponse.status).to.equal(200);
+    expect(httpResponse.body).to.have.key('token');
+  });
 });

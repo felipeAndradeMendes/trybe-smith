@@ -19,5 +19,10 @@ describe('ProductsService - Unidade', function () {
     expect(serviceResponse.data).to.deep.equal(productMock.productCreated);
   });
 
-  // FAZER TESTES DE UNIDADE DA ROTA GET PODUCTS - REQ 02
+  // it('Ao atualizar um produto, retorna status correto', async function () {
+  //   const { productIdArray, orderId } = productMock.productUpdateParameters;
+  //   const mockUpdateReturn = ProductModel.build(productIdArray, orde)
+  // });
+
+
 });

@@ -8,7 +8,7 @@ async function listAll(req: Request, res: Response) {
 
     return res.status(200).json(listedOrders.data);
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     // return res.status(500).json(error.message);
   }
 }
@@ -16,9 +16,9 @@ async function listAll(req: Request, res: Response) {
 async function create(req: Request, res: Response) {
   try {    
     const { userId, productIds } = req.body;
-    const { user } = res.locals;
-    console.log('USER------->>:', user);
-    console.log('**************ENTREI NO CONTROLLER------->');
+    // const { user } = res.locals;
+    // console.log('USER------->>:', user);
+    // console.log('**************ENTREI NO CONTROLLER------->');
 
     const verifyUser = await userService.findOne(userId);
 
@@ -33,7 +33,7 @@ async function create(req: Request, res: Response) {
 
     return res.status(201).json({ userId, productIds });
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     // return res.status(500).json(error.message);
   }
 }

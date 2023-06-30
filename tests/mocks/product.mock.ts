@@ -65,6 +65,13 @@ const productListReturned = [
     "orderId": 4
   }
 ] 
+const productId = 1;
+const productIdArray = [1, 2];
+const orderId = 1;
+const productUpdateParameters = {
+  productIdArray,
+  orderId,
+}
 
 // const buildedMock = productListReturned.forEach(product => {
 //   ProductModel.build(product);
@@ -75,4 +82,6 @@ export default {
   productCreated,
   createProductServiceResponse,
   productListReturned,
+  productUpdateParameters,
+  productId,
 };
