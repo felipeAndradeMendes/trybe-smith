@@ -32,7 +32,6 @@ Promise<ServiceResponseSuccess<string> | undefined> {
     { where: { id: prodId } },
   )); 
   await Promise.all(productPromises);
-  // console.log('PRODUCT PROMISES:', productPromises);
 
   return {
     status: 'ok',

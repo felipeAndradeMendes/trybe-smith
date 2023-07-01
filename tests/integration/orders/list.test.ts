@@ -25,8 +25,7 @@ describe('GET /orders - Integração', function () {
       console.log('HTTP RESPONSE BODY:', httpResponse.body);
       
       expect(httpResponse.status).to.equal(200);
-      // expect(httpResponse.body).to.deep.equal(orderMocks.formatedReturnedOrders);
-    
+      // expect(httpResponse.body).to.deep.equal(orderMocks.formatedReturnedOrders);    
   });
 });
 

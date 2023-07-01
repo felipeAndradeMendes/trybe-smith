@@ -5,7 +5,6 @@ function inputValidation(req: Request, res: Response, next: NextFunction) {
   const productInput = req.body;
   
   const { error } = s.productSchema.validate(productInput);
-  // console.log('ERRO:', error);
 
   if (error && error.message.includes('required')) {
     return res.status(400).json({ message: error.message });

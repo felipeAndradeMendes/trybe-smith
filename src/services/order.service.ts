@@ -5,7 +5,6 @@ import { ServiceResponseSuccess } from '../types/ServiceResponse';
 import productService from './product.service';
 
 async function listAll(): Promise<ServiceResponseSuccess<NewOrder[]>> {
-// async function listAll(): Promise<ServiceResponseSuccess<OrderSequelizeModel[]>> {
   const listedOrders = await OrderModel.findAll({
     include: {
       model: ProductModel,
@@ -14,7 +13,6 @@ async function listAll(): Promise<ServiceResponseSuccess<NewOrder[]>> {
     },
   });
 
-  // console.log('LISTED ORDERS:', listedOrders);
   const adaptList = listedOrders.map((order) => {
     const prodIds = order.dataValues.productIds?.map((item) => item.id);
 
@@ -26,21 +24,16 @@ async function listAll(): Promise<ServiceResponseSuccess<NewOrder[]>> {
     };
     return newOrder;
   });
-  // console.log('ADAPT LIST:', adaptList);
 
   return { status: 'ok', data: adaptList };
-  // return { status: 'ok', data: listedOrders };
 }
 
 async function create({ productIds, userId }: 
 CreateOrderParameter): Promise<ServiceResponseSuccess<Order> | undefined> { 
   const addOrder = await OrderModel.create({ productIds, userId });
   console.log('ADD Orders:', addOrder);
-  // console.log('Product ids:', productIds);
 
   await productService.updateProducts(productIds, addOrder.dataValues.id);
-  // console.log('UPDATE PRODUCTS:', updateProducts);
-  // console.log('ADD ORDERS DATAVALUES', addOrder.dataValues);
   return {
     status: 'ok',
     data: addOrder.dataValues,

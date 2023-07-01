@@ -29,6 +29,4 @@ describe('ProductsController - Unidade', function () {
     expect(res.status).to.have.been.calledWith(201);
     expect(res.json).to.have.been.calledWith(productMock.productCreated);
   });
-
-  // FAZER TESTES DE UNIDADE DA ROTA GET PODUCTS - REQ 02
 });

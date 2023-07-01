@@ -1,6 +1,5 @@
 import { expect } from 'chai';
 import sinon from 'sinon';
-import { Model } from 'sequelize';
 import ProductModel from '../../../src/database/models/product.model';
 import productService from '../../../src/services/product.service';
 
@@ -18,8 +17,4 @@ describe('ProductsService - Unidade', function () {
     expect(serviceResponse.status).to.equal('ok');
     expect(serviceResponse.data).to.deep.equal(productMock.productCreated);
   });
-
-  /* Está com quase 90% dos testes passando
-  Retormar fazendo testes unitários dos services de products e users para finalziar */
-
 });

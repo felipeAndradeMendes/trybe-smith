@@ -23,10 +23,4 @@ const OrderModel: OrderSequelizeModelCreator = db.define('Order', {
   underscored: true,
 });
 
-// OrderModel.belongsTo<Model<Order, OrderInputtableTypes>, 
-// UserSequelizeModel>(UserModel, {
-//   foreignKey: 'userId',
-//   as: 'user', 
-// });
-
 export default OrderModel;

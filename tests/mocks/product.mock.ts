@@ -1,8 +1,3 @@
-// import { ProductSequelizeModel } from '../../src/database/models/product.model';
-
-// import ProductModel from "../../src/database/models/product.model";
-
-// import { ServiceResponseSuccess } from '../../src/types/ServiceResponse';
 const newProduct = {
   "name": "Martelo de Thor",
   "price": "30 peças de ouro",
@@ -77,9 +72,6 @@ const productServiceSuccessResponse = {
   status: 'ok',
   data: 'Product updated',
 }
-// const buildedMock = productListReturned.forEach(product => {
-//   ProductModel.build(product);
-// });
 
 export default {
   newProduct,

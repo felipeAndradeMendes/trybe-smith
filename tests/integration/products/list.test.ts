@@ -15,9 +15,6 @@ chai.use(chaiHttp);
 describe('GET /products - Integração', function () { 
   beforeEach(function () { sinon.restore(); });
   it('Ao listar produtos retornar status 200 e lista de produtos', async function () {
-    // const buildedMock = productMock.productListReturned.forEach(product => {
-      //   ProductModel.build(product);
-      // });
       const mockFindAllReturn = ProductModel.build(productMock.productCreated);
       sinon.stub(ProductModel, 'findAll').resolves([mockFindAllReturn]);
       

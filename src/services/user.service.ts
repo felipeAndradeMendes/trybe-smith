@@ -4,7 +4,6 @@ async function findOne(id: number): Promise<UserSequelizeModel | null> {
   const user = await UserModel.findOne({
     where: { id },
   });
-  // console.log('USER:', user);
   return user;
 }
 

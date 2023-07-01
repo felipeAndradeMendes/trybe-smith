@@ -16,9 +16,6 @@ async function listAll(req: Request, res: Response) {
 async function create(req: Request, res: Response) {
   try {    
     const { userId, productIds } = req.body;
-    // const { user } = res.locals;
-    // console.log('USER------->>:', user);
-    // console.log('**************ENTREI NO CONTROLLER------->');
 
     const verifyUser = await userService.findOne(userId);
 

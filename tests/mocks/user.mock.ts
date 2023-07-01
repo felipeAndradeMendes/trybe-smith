@@ -1,5 +1,3 @@
-import { password } from "../../src/database/config/database";
-
 const userModelSuccessResponse = {
   id: 1,
     username: 'Hagar',
